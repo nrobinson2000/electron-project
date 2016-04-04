@@ -8,9 +8,6 @@
 // Spark Core    [D3, D5, D2, D4, D7, D8];
 LiquidCrystal lcd(D0, D1, C3, C2, C1, C0);
 
-int LDR = A0;
-int brightness = 0;
-
 int printHandler(String args)
 {
 lcd.clear();
@@ -34,9 +31,6 @@ return 1;
 
 void setup()
 {
-pinMode(LDR, INPUT);
-Serial.begin(9600);
-
 Particle.function("print", printHandler);
 lcd.begin(16,2);
 
